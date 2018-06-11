@@ -6,15 +6,19 @@
 html, body{
   width: 100%;
   height: 100%;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'PT Sans', sans-serif;
   margin: 0;
   line-height: 1.4;
 }
-#navigation{
-  background-color: rgb(40,44,52)
+
+p{
+  font-family: 'PT Serif', serif;
 }
 
-
+#navigation{
+  background-color: rgb(40,44,52);
+  height: 60px;
+}
 
 .wrapper{
   width: 90%;
@@ -26,8 +30,277 @@ html, body{
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
+  transition: 0.5s color linear; /* die Farbe in der Navigation verändert sich über eine bestimmte Zeit, wenn man mit dem Kurser drüber fährt */
+}
+
+#navigation a:hover{ /* die Navigation verändert die Farbe, wenn man m it der Maus drüber fährt */
+  color: rgb(69,139,116);
 }
 
 #navigation li{
   list-style: none;
+  margin-left: 2em;
+}
+
+#menu{
+  background-color: rgb(40,44,52)
+}
+
+#Logo{
+  margin-top: 10px
+}
+
+#burger{
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  font-size: 2em;
+  float: right;
+  margin-top: 14px;
+  padding: none;
+}
+#hero{
+  width: 100%;
+  height: 100vh;
+  background-image: url(img/intro.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-text{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* der braucht nicht gesetzt zu werden, da das background-image immer ganz unten liegt */
+  text-align: center;
+  color: #fff;
+}
+
+.btn{
+  background-color: rgb(102,205,170);
+  color: #fff;
+  text-decoration: non;
+  padding: 1em;
+  border-style: solid;  /* auch möglich: border: 1px solid white; */
+  border-width: 1px;
+  border-color: #fff;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2em;
+  transition: 0.5s background linear; /* gibt die Veränderung an. Hier Zeit, was, in welchem Verlauf */
+}
+
+.btn:hover{
+  background: rgb(69,139,116); /* die Farbe des Button wird verändert, wenn man mit der Maus drüberfährt */
+}
+
+#rezepte h2{
+  text-transform: uppercase; /* Großbuchstaben */
+  font-size: 2em; /* Schriftgröße */
+}
+
+#rezepte img, #sidebar img{ /* Damit alle Bilder in den Rezepten und in der Sidebar sich groß und klein ziehen, je nachdem, wie groß der Bildschirm ist. */
+  width: 100%;
+}
+
+.col img{
+  border-radius: 4px 4px 0 0;
+  display: block; /* Ein Bild hat immer einen kleinen Rand. Damit das Bild keinen Rand hat, sondern alles ausfüllt. */
+}
+
+.text-rezepte{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 0 0 4px 4px;
+  text-align: center;
+  padding: 1em;
+}
+
+.col h3{
+  margin: 0;  /* um eine Schrift ist immer ein Abstand. Damit der weg ist muss ich 0 eingeben, denn wir wollen den Rahmen an das Bild anschließend haben*/
+}
+
+.rezepte{
+  margin: 0;
+  display: block; /* damit der Button über die komplette Breite geht */
+}
+.col{
+  margin-bottom: 2em;
+}
+
+.formular input{ /* das Formularfeld geht über die gesamte Breite der Sidebar */
+  height: 2em;
+  width: 100%;
+  padding-right: 2.5em; /* damit das beim Schreiben erscheinende x möglichst weit rechts ist */
+  border: 1px solid #000; /* der Rahmen ist 1px dick, durchgehend und hat die Farbe schwarz */
+  padding-left: 0.5em; /* damit das "Mmmhhh" im Formularfeld nicht ganz am Rand klebt */
+}
+
+.formular{ /* damit das Formular der Begrenzer für den formular Button ist. */
+  position: relative;
+  border-bottom: 1px dotted #000; /* die gestrichelte Linie unterhalb des Formularfeldes */
+  padding-bottom: 1em; /* der Abstand der gestrichelten Linie zum Formularfeld */
+  margin-bottom: 1em; /* der Abstand unterhalb der gestichelten Linie zum Bild */
+}
+
+.formular button{ /* der Button liegt rechts über dem Formularfeld */
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+  border: none;
+  font-size: 1.4em;
+  line-height: 1.2em; /* der Abstand der Schrift (hier ein Icon) vom oberen Rand */
+  padding: none;
+}
+
+.author img{
+  border-radius: 50%;
+  width: 50% !important; /* hier würde die id "#sidebar img" das 50% der class ".author img" überstimmen. Daher setzen wir ein !importang, damit das auf jeden Fall berücksichtigt wird. */
+}
+
+.author{
+  border-bottom: 1px dotted #000; /* gestrichelte Linie unterhalb des Bereichs Author */
+}
+
+.affiliate img{
+  width: 50% !important; /* die Weite ist so wichtig, dass sie die id "sidebar img" überschreibt */
+}
+
+/* da man alle Bilder in der Sidebar verkleinern möchte, kann man stattdessen auch schreiben: #sidebar img{width: 50%;} */
+
+#sidebar{ /* alle Elemente in der Sidebar werden zentriert */
+  text-align: center;
+}
+
+#sidebar h2{
+  text-transform: uppercase; /* Großbuchstaben */
+}
+
+footer{
+  clear: both; /* der Footer soll sich nicht mehr an den Vorgaben für die Sidebar richten */
+  background-color: rgb(40,44,52);
+  width: 100%;
+  min-height: 200px;
+}
+
+footer li{
+  list-style: none;
+}
+
+footer li a{
+  color: white;
+  text-decoration: none;
+}
+
+#social-menu li{ /* diese Icons stehen immer nebeneinander */
+  float: left; /* bei float right würde sich die Reihenfolge tauschen */
+  margin-left: 1em; /* stattdessen können wir auch display: block eingeben */
+}
+
+footer{
+  text-align: center; /* zentrieren */
+  padding-left: 2em; /* der innere Rand */
+}
+
+#footer-menu{
+  padding: 0; /* kein Rand */
+}
+
+#social-menu{
+  display: inline-block;
+  padding: 0; /* ohnr inneren Rand */
+}
+
+#menu{
+  position: absolute; /* ich hebe das element aus dem Kontext */
+  top: 60px;
+  z-index: 2; /* in die 2 ebene nach vorne gehoben */
+  width: 100%;
+
+  display: none; /* nicht anzeigen */
+  right: -100px; /* damit das Aufklappmenü nach rechts verschoben ist */
+  margin: 0; /* damit nichts an automatischen Rahmen stört */
+  padding: 0; /* damit nichts an automatischen inneren Rahmen stört */
+  transform: translateX(50%); /* ob das zwingend notwendig ist, weiß ich nicht. */
+}
+
+#menu.show{
+  display: block;
+}
+
+/* Ab hier wird angegeben, wie die Ansicht bei gerößeren Bildschirmen verändert werden soll 'Mediaquerie' */
+@media (min-width: 786px) { /* Größenangabe, ab welcher Bildschirmbreite der Mediaquerie gelten soll */
+
+#menu{
+  position: static;
+  width: auto;
+  display: block;
+}
+
+  #burger{ /* auf dem großen Bildschirm soll der Navigations Burger nicht auftauchen */
+    display: none;
+  }
+  #menu{
+    float: right;
+  }
+
+  #navigation li{
+    float: left;
+  }
+
+  .hero-text h1{
+    font-size: 3em;
+  }
+
+  .hero-text p{
+    font-size: 2em;
+  }
+
+  .col{
+    float: left;
+    width: 46%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+#rezepte{ /* damit die Rezepte nach links rücken und Platz für die Sidebar lassen */
+  width: 66.66667%;
+  float: left;
+}
+
+#sidebar{ /* die Sidebar rückt jetzt rechts neben die Rezepte */
+  width: 33.33333%;
+  float: left;
+}
+
+#footer-menu li{
+  float: left; /* die Menüpunkte stehen nebeneinander */
+  margin-left: 1em; /* schiebt die Menüpunkte nebeneinander. Stattdessen hätten man auch display: blog eingeben können */
+
+}
+
+.wrapper{
+  position: relative; /* mit absolute wird die Chefrolle aufgegeben. Mit relative wird die Chefrolle festgelegt. */
+  min-height: 200px;
+}
+
+#footer-menu{ /* diese Manüpunkte stehen beim kleinen Bildschirm untereinander und beim großen Bildschirm nebeneinander */
+  position: absolute;
+  top: 50%; /* um 50% von oben runter schieben. Damit fängt die Schrift aber erst ab der hälfte an. Es steht also unterhalb der hälfte und nicht direkt auf der Hälfte. Hier fehlt noch transform. */
+  margin: 0; /* weil die Schrift immer automatisch eine margin (einen Rand) hat. */
+  padding: 0; /* genauso wie bei margin ist auch hier ein innerer Rand standardmäßig vorhanden. */
+  transform: translateY(-50%); /* aas Element (hier die Links Kontakt, Impressum, Datenschutz) wird um 50% seiner eigenen Größe nach oben geschoben. */
+}
+
+#social-menu{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  transform: translateY(-50%);
+}
 }
